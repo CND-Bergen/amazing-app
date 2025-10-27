@@ -28,6 +28,7 @@ jobs:
         run: |
           npm install
           echo "ACCESS_TOKEN=${{ secrets.DEPLOY_TOKEN }}" > .env
+          cat .env
           npm run build
           IMAGE_TAG="ghcr.io/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}:${{ github.sha }}"
           echo IMAGE_TAG=${IMAGE_TAG,,} >> $GITHUB_ENV
