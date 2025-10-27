@@ -16,8 +16,7 @@ jobs:
         uses: actions/setup-node@v5
       - name: Running tests in PR
         run: |
-          # echo "Running tests in PR ${{ github.event.pull_request.title }}"
-          echo "&& echo 'hello world!"
+          echo "Running tests in PR ${{ github.event.pull_request.title }}"
           npm run build
       - name: Upload Results
         if: always()
